@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tentacat.Client</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <h1>
+        Tentacat.Client
+        
+      </h1>
+
+      
+
+      <a href="" target="_blank" class="view_source">Source</a>
+
+      
+
+      
+
+      
+        <h2 id="functions_summary">Functions summary</h2>
+        <ul class="summary">
+          <li>
+  <span class="summary_signature">
+    <a href="#authorization_header/2">authorization_header/2</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#delete/3">delete/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#get/3">get/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#head/3">head/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#options/3">options/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#patch/3">patch/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#post/3">post/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#post/4">post/4</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#process_request_body/1">process_request_body/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#process_response/3">process_response/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#process_response_body/1">process_response_body/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#process_url/1">process_url/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#put/4">put/4</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#request/5">request/5</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#start/0">start/0</a>
+  </span>
+</li>
+
+        </ul>
+      
+
+      
+
+      
+
+      
+        <div id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <div class="detail">
+  <p class="signature" id="authorization_header/2">
+    <strong>authorization_header(arg1, headers)</strong>
+  </p>
+  <div class="docstring"><p>There are two ways to authenticate through GitHub API v3:</p>
+
+<ul>
+<li>Basic authentication</li>
+<li>OAuth2 Token</li>
+</ul>
+
+<p>This function accepts both.</p>
+
+<h2>Examples</h2>
+
+<pre><code>iex&gt; Tentacat.Client.authorization_header([user: &quot;user&quot;, password: &quot;password&quot;], [])
+[Authorization: &quot;Basic dXNlcjpwYXNzd29yZA==&quot;]
+
+iex&gt; Tentacat.Client.authorization_header([access_token: &quot;92873971893&quot;], [])
+[Authorization: &quot;token 92873971893&quot;]
+</code></pre>
+
+<h2>More info</h2>
+
+<p><a href="http://developer.github.com/v3/#authentication">http://developer.github.com/v3/#authentication</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="delete/3">
+    <strong>delete(url, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="get/3">
+    <strong>get(url, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="head/3">
+    <strong>head(url, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="options/3">
+    <strong>options(url, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="patch/3">
+    <strong>patch(url, auth // nil, body // &quot;&quot;)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="post/3">
+    <strong>post(url, auth // nil, body // &quot;&quot;)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="post/4">
+    <strong>post(url, body, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="process_request_body/1">
+    <strong>process_request_body(body)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="process_response/3">
+    <strong>process_response(status_code, headers, body)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="process_response_body/1">
+    <strong>process_response_body(body)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="process_url/1">
+    <strong>process_url(url)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="put/4">
+    <strong>put(url, body, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="request/5">
+    <strong>request(method, url, body // &quot;&quot;, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"><p>Sends an HTTP request.
+Args:
+  * method - HTTP method, atom (:get, :head, :post, :put, :delete, etc.)
+  * url - URL, binary string or char list
+  * body - request body, binary string or char list
+  * headers - HTTP headers, orddict (eg. [{:Accept, &quot;application/json&quot;}])
+  * options - orddict of options
+Options:
+  * timeout - timeout in ms, integer
+Returns HTTPotion.Response if successful.
+Raises  HTTPotion.HTTPError if failed.</p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="start/0">
+    <strong>start()</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div>
+        </div>
+      
+
+      
+
+      
+    </div>
+  </body>
+</html>
