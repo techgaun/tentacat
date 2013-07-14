@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tentacat.Organizations.Members</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <h1>
+        Tentacat.Organizations.Members
+        
+      </h1>
+
+      
+
+      <a href="" target="_blank" class="view_source">Source</a>
+
+      
+
+      
+
+      
+        <h2 id="functions_summary">Functions summary</h2>
+        <ul class="summary">
+          <li>
+  <span class="summary_signature">
+    <a href="#conceal/3">conceal/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#list/2">list/2</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#member?/3">member?/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#public_list/2">public_list/2</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#public_member?/3">public_member?/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#publicize/3">publicize/3</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#remove/3">remove/3</a>
+  </span>
+</li>
+
+        </ul>
+      
+
+      
+
+      
+
+      
+        <div id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <div class="detail">
+  <p class="signature" id="conceal/3">
+    <strong>conceal(organization, user, client)</strong>
+  </p>
+  <div class="docstring"><p>Conceal a <code>user</code>&#39;s membership on an <code>organization</code></p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.conceal &quot;github&quot;, &quot;mojombo&quot;
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#conceal-a-users-membership">http://developer.github.com/v3/orgs/members/#conceal-a-users-membership</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="list/2">
+    <strong>list(organization, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>List members of a <code>organization</code>. The response will differ if the authenticated user is also owner of the organization</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.list &quot;github&quot;
+Tentacat.Organizations.Members.list &quot;github&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#members-list">http://developer.github.com/v3/orgs/members/#members-list</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="member?/3">
+    <strong>member?(organization, user, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>Check if a <code>user</code> is, publicly or privately, a member of the <code>organization</code>.</p>
+
+<p>Possible responses: 204, 404 or 302</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.member? &quot;github&quot;, &quot;mojombo&quot;
+Tentacat.Organizations.Members.member? &quot;github&quot;, &quot;mojombo&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#check-membership">http://developer.github.com/v3/orgs/members/#check-membership</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="public_list/2">
+    <strong>public_list(organization, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>List of publicized members of an <code>organization</code></p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.public_list &quot;github&quot;
+Tentacat.Organizations.Members.public_list &quot;github&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#public-members-list">http://developer.github.com/v3/orgs/members/#public-members-list</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="public_member?/3">
+    <strong>public_member?(organization, user, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>Check if a <code>user</code> is a public member of the <code>organization</code>.</p>
+
+<p>Possible responses: 204 or 404</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.public_member? &quot;github&quot;, &quot;mojombo&quot;
+Tentacat.Organizations.Members.public_member? &quot;github&quot;, &quot;mojombo&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#public-members-list">http://developer.github.com/v3/orgs/members/#public-members-list</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="publicize/3">
+    <strong>publicize(organization, user, client)</strong>
+  </p>
+  <div class="docstring"><p>Publicize a <code>user</code>&#39;s membership on an <code>organization</code></p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.publicize &quot;github&quot;, &quot;mojombo&quot;
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#publicize-a-users-membership">http://developer.github.com/v3/orgs/members/#publicize-a-users-membership</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="remove/3">
+    <strong>remove(organization, user, client)</strong>
+  </p>
+  <div class="docstring"><p>Remove a member <code>user</code> from an <code>organization</code></p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.Members.remove &quot;github&quot;, &quot;mojombo&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/members/#remove-a-member">http://developer.github.com/v3/orgs/members/#remove-a-member</a></p>
+</div>
+  
+</div>
+        </div>
+      
+
+      
+
+      
+    </div>
+  </body>
+</html>

@@ -38,17 +38,17 @@
         <ul class="summary">
           <li>
   <span class="summary_signature">
-    <a href="#emails/1">emails/1</a>
+    <a href="#find/2">find/2</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#key/2">key/2</a>
+    <a href="#list/1">list/1</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#keys/1">keys/1</a>
+    <a href="#list_since/2">list_since/2</a>
   </span>
 </li>
 <li>
@@ -59,16 +59,6 @@
 <li>
   <span class="summary_signature">
     <a href="#update/2">update/2</a>
-  </span>
-</li>
-<li>
-  <span class="summary_signature">
-    <a href="#user/1">user/1</a>
-  </span>
-</li>
-<li>
-  <span class="summary_signature">
-    <a href="#users/1">users/1</a>
   </span>
 </li>
 
@@ -83,32 +73,59 @@
         <div id="functions_details" class="details_list">
           <h2>Functions</h2>
           <div class="detail">
-  <p class="signature" id="emails/1">
-    <strong>emails(auth)</strong>
+  <p class="signature" id="find/2">
+    <strong>find(user, client // Client.new())</strong>
   </p>
-  <div class="docstring"></div>
-  
-</div><div class="detail">
-  <p class="signature" id="key/2">
-    <strong>key(id, auth)</strong>
-  </p>
-  <div class="docstring"></div>
-  
-</div><div class="detail">
-  <p class="signature" id="keys/1">
-    <strong>keys(user_or_auth)</strong>
-  </p>
-  <div class="docstring"></div>
-  
-</div><div class="detail">
-  <p class="signature" id="me/1">
-    <strong>me(auth)</strong>
-  </p>
-  <div class="docstring"><p>Get the authenticated user passing an <code>auth</code> information described at Tentacat.Client.authorization_header</p>
+  <div class="docstring"><p>Get a single <code>user</code></p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.me(access_token: &quot;91898192219&quot;)
+<pre><code>Tentacat.Users.find &quot;edgurgel&quot;, client
+Tentacat.Users.find &quot;iurifq&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/users/#get-a-single-user">http://developer.github.com/v3/users/#get-a-single-user</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="list/1">
+    <strong>list(client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>Get all users</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Users.list
+Tentacat.Users.list client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/users/#get-all-users">http://developer.github.com/v3/users/#get-all-users</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="list_since/2">
+    <strong>list_since(since, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>Get all users since <code>since</code> id</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Users.list 348
+Tentacat.Users.list 348, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/users/#get-all-users">http://developer.github.com/v3/users/#get-all-users</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="me/1">
+    <strong>me(client)</strong>
+  </p>
+  <div class="docstring"><p>Get the authenticated user passing a <code>client</code> with necessary credentials</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Users.me(client)
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/#get-the-authenticated-user">http://developer.github.com/v3/users/#get-the-authenticated-user</a></p>
@@ -116,7 +133,7 @@
   
 </div><div class="detail">
   <p class="signature" id="update/2">
-    <strong>update(auth, options)</strong>
+    <strong>update(options, client)</strong>
   </p>
   <div class="docstring"><p>Update the authenticated user</p>
 
@@ -134,40 +151,10 @@
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.update([user: &quot;user&quot;, password: &quot;pass&quot;], email: &quot;eduardo@gurgel.me&quot;, hireable: false)
+<pre><code>Tentacat.Users.update [email: &quot;eduardo@gurgel.me&quot;, hireable: false], client
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/#update-the-authenticated-user">http://developer.github.com/v3/users/#update-the-authenticated-user</a></p>
-</div>
-  
-</div><div class="detail">
-  <p class="signature" id="user/1">
-    <strong>user(user)</strong>
-  </p>
-  <div class="docstring"><p>Get a single <code>user</code></p>
-
-<h2>Example</h2>
-
-<pre><code>Tentacat.Users.user(&quot;edgurgel&quot;)
-Tentacat.Users.user(&quot;iurifq&quot;)
-</code></pre>
-
-<p>More info at: <a href="http://developer.github.com/v3/users/#get-a-single-user">http://developer.github.com/v3/users/#get-a-single-user</a></p>
-</div>
-  
-</div><div class="detail">
-  <p class="signature" id="users/1">
-    <strong>users(since // nil)</strong>
-  </p>
-  <div class="docstring"><p>Get all users</p>
-
-<h2>Example</h2>
-
-<pre><code>Tentacat.Users.users
-Tentacat.Users.users(348)
-</code></pre>
-
-<p>More info at: <a href="http://developer.github.com/v3/users/#get-all-users">http://developer.github.com/v3/users/#get-all-users</a></p>
 </div>
   
 </div>

@@ -43,12 +43,12 @@
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#destroy/2">destroy/2</a>
+    <a href="#list/1">list/1</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#emails/1">emails/1</a>
+    <a href="#remove/2">remove/2</a>
   </span>
 </li>
 
@@ -64,44 +64,44 @@
           <h2>Functions</h2>
           <div class="detail">
   <p class="signature" id="create/2">
-    <strong>create(emails, auth)</strong>
+    <strong>create(emails, client)</strong>
   </p>
   <div class="docstring"><p>Add email address(es)</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.Emails.create([&quot;ed@gurgel.me&quot;], access_token: &quot;91898192219&quot;)
+<pre><code>Tentacat.Users.Emails.create [&quot;ed@gurgel.me&quot;], client
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/emails/#add-email-addresses">http://developer.github.com/v3/users/emails/#add-email-addresses</a></p>
 </div>
   
 </div><div class="detail">
-  <p class="signature" id="destroy/2">
-    <strong>destroy(emails, auth)</strong>
-  </p>
-  <div class="docstring"><p>Delete email address(es)</p>
-
-<h2>Example</h2>
-
-<pre><code>Tentacat.Users.Emails.destroy([&quot;ed@gurgel.me&quot;], access_token: &quot;91898192219&quot;)
-</code></pre>
-
-<p>More info at: <a href="http://developer.github.com/v3/users/emails/#delete-email-addresses">http://developer.github.com/v3/users/emails/#delete-email-addresses</a></p>
-</div>
-  
-</div><div class="detail">
-  <p class="signature" id="emails/1">
-    <strong>emails(auth)</strong>
+  <p class="signature" id="list/1">
+    <strong>list(client)</strong>
   </p>
   <div class="docstring"><p>List email addresses for the authenticated user</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.Emails.emails(access_token: &quot;91898192219&quot;)
+<pre><code>Tentacat.Users.Emails.list client
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user">http://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="remove/2">
+    <strong>remove(emails, client)</strong>
+  </p>
+  <div class="docstring"><p>Delete email address(es)</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Users.Emails.remove [&quot;ed@gurgel.me&quot;], client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/users/emails/#delete-email-addresses">http://developer.github.com/v3/users/emails/#delete-email-addresses</a></p>
 </div>
   
 </div>

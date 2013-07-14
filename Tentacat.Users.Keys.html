@@ -43,17 +43,22 @@
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#destroy/2">destroy/2</a>
+    <a href="#find/2">find/2</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#key/2">key/2</a>
+    <a href="#list/2">list/2</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#keys/1">keys/1</a>
+    <a href="#list_mine/1">list_mine/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#remove/2">remove/2</a>
   </span>
 </li>
 <li>
@@ -74,71 +79,84 @@
           <h2>Functions</h2>
           <div class="detail">
   <p class="signature" id="create/3">
-    <strong>create(title, key, auth)</strong>
+    <strong>create(title, key, client)</strong>
   </p>
   <div class="docstring"><p>Create a public key on the authorized user</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.Keys.create(&quot;title&quot;, &quot;ssh-rsa AAA...&quot;, [access_token: &quot;938492c&quot;])
+<pre><code>Tentacat.Users.Keys.create(&quot;title&quot;, &quot;ssh-rsa AAA...&quot;, client)
 </code></pre>
 
 <p>More info at:<a href="http://developer.github.com/v3/users/keys/#create-a-public-key">http://developer.github.com/v3/users/keys/#create-a-public-key</a></p>
 </div>
   
 </div><div class="detail">
-  <p class="signature" id="destroy/2">
-    <strong>destroy(id, auth)</strong>
-  </p>
-  <div class="docstring"><p>Delete a public from the authorized user</p>
-
-<h2>Example</h2>
-
-<pre><code>Tentacat.Users.Keys.destroy(123, [access_token: &quot;9218923&quot;])
-</code></pre>
-
-<p>More info at: <a href="http://developer.github.com/v3/users/keys/#delete-a-public-key">http://developer.github.com/v3/users/keys/#delete-a-public-key</a></p>
-</div>
-  
-</div><div class="detail">
-  <p class="signature" id="key/2">
-    <strong>key(id, auth)</strong>
+  <p class="signature" id="find/2">
+    <strong>find(id, client)</strong>
   </p>
   <div class="docstring"><p>Get a single public key of the authorized user</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.Keys.key(1, [access_token: &quot;2983925&quot;])
+<pre><code>Tentacat.Users.Keys.find 1, client
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/keys/#get-a-single-public-key">http://developer.github.com/v3/users/keys/#get-a-single-public-key</a></p>
 </div>
   
 </div><div class="detail">
-  <p class="signature" id="keys/1">
-    <strong>keys(user)</strong>
+  <p class="signature" id="list/2">
+    <strong>list(user, client // Client.new())</strong>
   </p>
-  <div class="docstring"><p>List public keys for a user or for the authenticated user</p>
+  <div class="docstring"><p>List public keys for a user</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.Keys.keys(&quot;bastos&quot;)
-Tentacat.Users.Keys.keys([access_token: &quot;2983982&quot;])
-Tentacat.Users.Keys.keys([user: &quot;iurifq&quot;, password: &quot;98921&quot;])
+<pre><code>Tentacat.Users.Keys.list &quot;bastos&quot;, client
+Tentacat.Users.Keys.list &quot;bastos&quot;
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/keys/#list-public-keys-for-a-user">http://developer.github.com/v3/users/keys/#list-public-keys-for-a-user</a> and <a href="http://developer.github.com/v3/users/keys/#list-your-public-keys">http://developer.github.com/v3/users/keys/#list-your-public-keys</a></p>
 </div>
   
 </div><div class="detail">
+  <p class="signature" id="list_mine/1">
+    <strong>list_mine(client)</strong>
+  </p>
+  <div class="docstring"><p>List public keys for the authenticated user</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Users.Keys.list_mine client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/users/keys/#list-public-keys-for-a-user">http://developer.github.com/v3/users/keys/#list-public-keys-for-a-user</a> and <a href="http://developer.github.com/v3/users/keys/#list-your-public-keys">http://developer.github.com/v3/users/keys/#list-your-public-keys</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="remove/2">
+    <strong>remove(id, client)</strong>
+  </p>
+  <div class="docstring"><p>Delete a public from the authorized user</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Users.Keys.remove 123, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/users/keys/#delete-a-public-key">http://developer.github.com/v3/users/keys/#delete-a-public-key</a></p>
+</div>
+  
+</div><div class="detail">
   <p class="signature" id="update/4">
-    <strong>update(id, title, key, auth)</strong>
+    <strong>update(id, title, key, client)</strong>
   </p>
   <div class="docstring"><p>Update a public key from the authorized user</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Users.Keys.update(123, &quot;title&quot;, &quot;ssh-rsa ...&quot;, [user: &quot;alissonsales&quot;, password: &quot;pass&quot;])
+<pre><code>Tentacat.Users.Keys.update(123, &quot;title&quot;, &quot;ssh-rsa ...&quot;, client)
 </code></pre>
 
 <p>More info at: <a href="http://developer.github.com/v3/users/keys/#update-a-public-key">http://developer.github.com/v3/users/keys/#update-a-public-key</a></p>

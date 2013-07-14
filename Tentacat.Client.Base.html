@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tentacat.Client</title>
+    <title>Tentacat.Client.Base</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -21,7 +21,7 @@
 
     <div id="content">
       <h1>
-        Tentacat.Client
+        Tentacat.Client.Base
         
       </h1>
 
@@ -68,6 +68,11 @@
 </li>
 <li>
   <span class="summary_signature">
+    <a href="#patch/4">patch/4</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
     <a href="#post/3">post/3</a>
   </span>
 </li>
@@ -78,17 +83,32 @@
 </li>
 <li>
   <span class="summary_signature">
+    <a href="#process_headers/1">process_headers/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
     <a href="#process_request_body/1">process_request_body/1</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#process_response/3">process_response/3</a>
+    <a href="#process_response/1">process_response/1</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
     <a href="#process_response_body/1">process_response_body/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#process_response_chunk/1">process_response_chunk/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#process_status_code/1">process_status_code/1</a>
   </span>
 </li>
 <li>
@@ -109,6 +129,11 @@
 <li>
   <span class="summary_signature">
     <a href="#start/0">start/0</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#transformer/1">transformer/1</a>
   </span>
 </li>
 
@@ -137,10 +162,10 @@
 
 <h2>Examples</h2>
 
-<pre><code>iex&gt; Tentacat.Client.authorization_header([user: &quot;user&quot;, password: &quot;password&quot;], [])
+<pre><code>iex&gt; Tentacat.Client.Base.authorization_header([user: &quot;user&quot;, password: &quot;password&quot;], [])
 [Authorization: &quot;Basic dXNlcjpwYXNzd29yZA==&quot;]
 
-iex&gt; Tentacat.Client.authorization_header([access_token: &quot;92873971893&quot;], [])
+iex&gt; Tentacat.Client.Base.authorization_header([access_token: &quot;92873971893&quot;], [])
 [Authorization: &quot;token 92873971893&quot;]
 </code></pre>
 
@@ -180,6 +205,12 @@ iex&gt; Tentacat.Client.authorization_header([access_token: &quot;92873971893&qu
   <div class="docstring"></div>
   
 </div><div class="detail">
+  <p class="signature" id="patch/4">
+    <strong>patch(url, body, headers // [], options // [])</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
   <p class="signature" id="post/3">
     <strong>post(url, auth // nil, body // &quot;&quot;)</strong>
   </p>
@@ -192,20 +223,38 @@ iex&gt; Tentacat.Client.authorization_header([access_token: &quot;92873971893&qu
   <div class="docstring"></div>
   
 </div><div class="detail">
+  <p class="signature" id="process_headers/1">
+    <strong>process_headers(headers)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
   <p class="signature" id="process_request_body/1">
     <strong>process_request_body(body)</strong>
   </p>
   <div class="docstring"></div>
   
 </div><div class="detail">
-  <p class="signature" id="process_response/3">
-    <strong>process_response(status_code, headers, body)</strong>
+  <p class="signature" id="process_response/1">
+    <strong>process_response(response)</strong>
   </p>
   <div class="docstring"></div>
   
 </div><div class="detail">
   <p class="signature" id="process_response_body/1">
     <strong>process_response_body(body)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="process_response_chunk/1">
+    <strong>process_response_chunk(chunk)</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="process_status_code/1">
+    <strong>process_status_code(status_code)</strong>
   </p>
   <div class="docstring"></div>
   
@@ -241,6 +290,12 @@ Raises  HTTPotion.HTTPError if failed.</p>
 </div><div class="detail">
   <p class="signature" id="start/0">
     <strong>start()</strong>
+  </p>
+  <div class="docstring"></div>
+  
+</div><div class="detail">
+  <p class="signature" id="transformer/1">
+    <strong>transformer(target)</strong>
   </p>
   <div class="docstring"></div>
   

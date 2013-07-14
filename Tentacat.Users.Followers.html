@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tentacat.Gitignore</title>
+    <title>Tentacat.Users.Followers</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -21,7 +21,7 @@
 
     <div id="content">
       <h1>
-        Tentacat.Gitignore
+        Tentacat.Users.Followers
         
       </h1>
 
@@ -38,12 +38,12 @@
         <ul class="summary">
           <li>
   <span class="summary_signature">
-    <a href="#template/2">template/2</a>
+    <a href="#followers/1">followers/1</a>
   </span>
 </li>
 <li>
   <span class="summary_signature">
-    <a href="#templates/1">templates/1</a>
+    <a href="#following/1">following/1</a>
   </span>
 </li>
 
@@ -58,33 +58,31 @@
         <div id="functions_details" class="details_list">
           <h2>Functions</h2>
           <div class="detail">
-  <p class="signature" id="template/2">
-    <strong>template(name, client // Client.new())</strong>
+  <p class="signature" id="followers/1">
+    <strong>followers(client)</strong>
   </p>
-  <div class="docstring"><p>Get a single template based on the <code>name</code></p>
+  <div class="docstring"><p>List users the authenticated user follows</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Gitignore.template &quot;C&quot;
-Tentacat.Gitignore.template &quot;C&quot;, client
+<pre><code>Tentacat.Users.Followers.followers client
 </code></pre>
 
-<p>More info at: <a href="http://developer.github.com/v3/gitignore/#get-a-single-template">http://developer.github.com/v3/gitignore/#get-a-single-template</a></p>
+<p>More info at: <a href="http://developer.github.com/v3/users/followers/#list-followers-of-a-user">http://developer.github.com/v3/users/followers/#list-followers-of-a-user</a></p>
 </div>
   
 </div><div class="detail">
-  <p class="signature" id="templates/1">
-    <strong>templates(client // Client.new())</strong>
+  <p class="signature" id="following/1">
+    <strong>following(client)</strong>
   </p>
-  <div class="docstring"><p>List all templates available</p>
+  <div class="docstring"><p>List followers for the authenticated user</p>
 
 <h2>Example</h2>
 
-<pre><code>Tentacat.Gitignore.templates
-Tentacat.Gitignore.templates client
+<pre><code>Tentacat.Users.Followers.following client
 </code></pre>
 
-<p>More info at: <a href="http://developer.github.com/v3/gitignore/#listing-available-templates">http://developer.github.com/v3/gitignore/#listing-available-templates</a></p>
+<p>More info at: <a href="http://developer.github.com/v3/users/followers/#list-users-followed-by-another-user">http://developer.github.com/v3/users/followers/#list-users-followed-by-another-user</a></p>
 </div>
   
 </div>

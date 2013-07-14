@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tentacat.Organizations</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <h1>
+        Tentacat.Organizations
+        
+      </h1>
+
+      
+
+      <a href="" target="_blank" class="view_source">Source</a>
+
+      
+
+      
+
+      
+        <h2 id="functions_summary">Functions summary</h2>
+        <ul class="summary">
+          <li>
+  <span class="summary_signature">
+    <a href="#find/2">find/2</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#list/2">list/2</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#list_mine/1">list_mine/1</a>
+  </span>
+</li>
+<li>
+  <span class="summary_signature">
+    <a href="#update/3">update/3</a>
+  </span>
+</li>
+
+        </ul>
+      
+
+      
+
+      
+
+      
+        <div id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <div class="detail">
+  <p class="signature" id="find/2">
+    <strong>find(org, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>Get an organization</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Orgnizations.find &quot;Codeminer42&quot;
+Tentacat.Orgnizations.find &quot;Codeminer42&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/#get-an-organization">http://developer.github.com/v3/orgs/#get-an-organization</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="list/2">
+    <strong>list(user, client // Client.new())</strong>
+  </p>
+  <div class="docstring"><p>List all public organizations for a user</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.list &quot;edgurgel&quot;
+Tentacat.Organizations.list &quot;edgurgel&quot;, client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/#list-user-organizations">http://developer.github.com/v3/orgs/#list-user-organizations</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="list_mine/1">
+    <strong>list_mine(client)</strong>
+  </p>
+  <div class="docstring"><p>List public and private organizations for the authenticated user</p>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.list_mine client
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/#list-user-organizations">http://developer.github.com/v3/orgs/#list-user-organizations</a></p>
+</div>
+  
+</div><div class="detail">
+  <p class="signature" id="update/3">
+    <strong>update(org, options, client)</strong>
+  </p>
+  <div class="docstring"><p>Update an organization</p>
+
+<p>Possible values for <code>options</code>:</p>
+
+<ul>
+<li>[billing_email: &quot;billing email&quot;]</li>
+<li>[company: &quot;Company42&quot;]</li>
+<li>[email: &quot;public email&quot;]</li>
+<li>[location: &quot;Brazil&quot;]</li>
+<li>[name: &quot;company42&quot;]</li>
+</ul>
+
+<h2>Example</h2>
+
+<pre><code>Tentacat.Organizations.update(&quot;codeminer42&quot;, [email: &quot;public@codeminer42.com&quot;, location: &quot;São Paulo&quot;], client)
+</code></pre>
+
+<p>More info at: <a href="http://developer.github.com/v3/orgs/#edit-an-organization">http://developer.github.com/v3/orgs/#edit-an-organization</a></p>
+</div>
+  
+</div>
+        </div>
+      
+
+      
+
+      
+    </div>
+  </body>
+</html>
