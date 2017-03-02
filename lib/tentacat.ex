@@ -12,6 +12,10 @@ defmodule Tentacat do
 
   @spec process_response(HTTPoison.Response.t) :: response
   def process_response(%HTTPoison.Response{status_code: 200, body: body}), do: body
+  def process_response(%HTTPoison.Response{status_code: 302, headers: headers}) do
+    {_, location} = List.keyfind(headers, "Location", 0)
+    {302, location}
+  end
   def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, body }
 
   def delete(path, client, body \\ "") do
